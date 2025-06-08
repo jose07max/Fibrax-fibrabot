@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: fibrax-fibrabot
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run painel_geral.py --server.port=10000"
+    plan: free
+    envVars: []
