@@ -1,4 +1,43 @@
 import streamlit as st
+import matplotlib.pyplot as plt
+
+# Importa os módulos
+import agendador_de_postagens
+import respostas_automaticas
+import sugestoes_virais
+import fibrax_whatsapp_bot
+
+# Título e métricas
+st.title("📊 Painel Geral - FibraBot (Fibrax Telecom)")
+st.header("📈 Métricas da Semana")
+st.write("Seguidores: 1525")
+st.write("Curtidas: 845")
+st.write("Comentários: 141")
+
+# Exemplo de gráfico
+fig2, ax2 = plt.subplots()
+ax2.plot([1, 2, 3], [1400, 1450, 1525], color='green', marker='x')
+ax2.set_ylabel("Seguidores")
+ax2.set_title("Crescimento")
+st.pyplot(fig2)
+
+# Seção 3: Botões para funcionalidades
+st.header("🛠️ Funcionalidades Disponíveis")
+
+if st.button("📅 Agendador de Postagens"):
+    agendador_de_postagens.run()
+
+if st.button("🤖 Respostas Automáticas"):
+    respostas_automaticas.run()
+
+if st.button("🔥 Sugestões de Conteúdos Virais"):
+    sugestoes_virais.run()
+
+if st.button("💬 Bot WhatsApp (360dialog)"):
+    fibrax_whatsapp_bot.run()
+
+# Rodapé
+st.caption("FibraBot desenvolvido para Fibrax Telecom - Todos os direitos reservados ©")import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
