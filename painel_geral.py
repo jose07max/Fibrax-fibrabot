@@ -98,13 +98,20 @@ if autenticado:
         ax2.set_title("Crescimento")
         st.pyplot(fig2)
 
-    # Seção 3: Links para outras funções (instruções)
-    st.header("🛠️ Funcionalidades Disponíveis")
-    st.markdown("""
-    - Agendador de Postagens → `agendador_de_postagens.py`
-    - Respostas Automáticas → `respostas_automaticas.py`
-    - Sugestões de Conteúdos Virais → `sugestoes_virais.py`
-    - Bot WhatsApp (360dialog) → `fibrax_whatsapp_bot.py`
-    """)
+    col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("📆 Agendador de Postagens"):
+        exec(open("agendador_de_postagens.py").read())
+
+    if st.button("📊 Sugestões de Conteúdos Virais"):
+        exec(open("sugestoes_virais.py").read())
+
+with col2:
+    if st.button("🤖 Respostas Automáticas"):
+        exec(open("respostas_automaticas.py").read())
+
+    if st.button("💬 Bot WhatsApp (360dialog)"):
+        exec(open("fibrax_whatsapp_bot.py").read())
 
     st.caption("FibraBot desenvolvido para Fibrax Telecom - Todos os direitos reservados ©")
